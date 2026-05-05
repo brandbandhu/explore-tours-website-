@@ -4,7 +4,7 @@ import { faqs } from "@/data/siteData";
 
 const FAQSection = () => {
   return (
-    <section className="section-padding bg-background">
+    <section id="faq" className="section-padding bg-background">
       <div className="container mx-auto max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -11,8 +11,8 @@ const AtlasPage = () => {
         <img src={heroKids} alt="ATLAS Academy" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center px-4">
-            <h1 className="font-heading text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4">ATLAS Academy</h1>
+          <div className="px-4 text-center">
+            <h1 className="mb-4 font-heading text-3xl font-extrabold text-primary-foreground sm:text-4xl md:text-6xl">ATLAS Academy</h1>
             <p className="text-primary-foreground/80 font-body text-lg max-w-xl mx-auto">
               Adventure Training for Leadership, Adventure & Survival
             </p>
@@ -44,7 +44,7 @@ const AtlasPage = () => {
               ))}
             </div>
             <Link to="/contact">
-              <Button size="lg" className="gradient-highlight text-highlight-foreground font-heading font-bold rounded-full px-10">
+              <Button size="lg" className="rounded-full px-8 font-heading font-bold text-highlight-foreground gradient-highlight sm:px-10">
                 Enroll Now
               </Button>
             </Link>

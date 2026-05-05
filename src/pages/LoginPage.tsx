@@ -28,7 +28,7 @@ const LoginPage = () => {
             </div>
 
             <div className="lg:col-span-6">
-              <div className="bg-card rounded-3xl border border-border card-shadow p-8 md:p-10">
+              <div className="rounded-lg border border-border bg-card p-5 card-shadow sm:p-8 md:p-10">
                 <div className="flex items-center gap-6 border-b border-border pb-4">
                   <button
                     onClick={() => setTab("login")}

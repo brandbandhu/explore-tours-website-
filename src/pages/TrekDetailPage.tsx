@@ -43,7 +43,7 @@ const TrekDetailPage = () => {
     { icon: TrendingUp, label: "Difficulty", value: trek.difficulty },
     { icon: Users, label: "Age Group", value: `${trek.ageGroup} yrs` },
     { icon: Calendar, label: "Best Months", value: trek.month.join(", ") },
-    { icon: IndianRupee, label: "Starting Price", value: `?${trek.price.toLocaleString()}` },
+    { icon: IndianRupee, label: "Starting Price", value: `₹${trek.price.toLocaleString()}` },
   ];
 
   const monthNames: Record<string, string> = {
@@ -98,26 +98,26 @@ const TrekDetailPage = () => {
                 <div className="relative h-[360px]">
                   <img src={trek.image} alt={trek.title} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
                     <Badge className="gradient-highlight text-highlight-foreground font-heading text-xs mb-3">
                       {trek.difficulty}
                     </Badge>
-                    <h1 className="font-heading text-3xl md:text-5xl font-extrabold text-primary-foreground mb-2">
+                    <h1 className="mb-2 font-heading text-2xl font-extrabold text-primary-foreground sm:text-3xl md:text-5xl">
                       {trek.title}
                     </h1>
-                    <p className="text-primary-foreground/80 font-body flex items-center gap-2">
+                    <p className="flex items-center gap-2 font-body text-sm text-primary-foreground/80 sm:text-base">
                       <MapPin className="w-4 h-4" /> {trek.location}
                     </p>
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-3 p-4 bg-background/60">
+                <div className="grid grid-cols-3 gap-2 bg-background/60 p-3 sm:gap-3 sm:p-4">
                   {trek.gallery.slice(0, 3).map((img, i) => (
                     <img
                       key={i}
                       src={img}
                       alt={`${trek.title} gallery ${i + 1}`}
                       loading="lazy"
-                      className="h-24 w-full object-cover rounded-2xl"
+                      className="h-20 w-full rounded-lg object-cover sm:h-24"
                     />
                   ))}
                 </div>
@@ -184,7 +184,7 @@ const TrekDetailPage = () => {
                           {isOpen && (
                             <div className="bg-muted/40 p-4 space-y-3">
                               {month.items.map((item) => (
-                                <div key={item.range} className="bg-white rounded-xl px-4 py-2 flex items-center justify-between border border-border shadow-sm">
+                                <div key={item.range} className="flex flex-col gap-1 rounded-lg border border-border bg-white px-4 py-3 shadow-sm sm:flex-row sm:items-center sm:justify-between">
                                   <span className="text-sm font-semibold text-foreground">{item.range}</span>
                                   <span className={`text-sm font-semibold ${statusTone[item.tone as keyof typeof statusTone]}`}>
                                     {item.seats} {item.status !== "Open" ? "• " + item.status : ""}
@@ -250,9 +250,9 @@ const TrekDetailPage = () => {
               <div className="sticky top-24 bg-card rounded-2xl p-6 card-shadow border border-border space-y-6">
                 <div>
                   <div className="flex items-baseline gap-2 mb-1">
-                    <span className="font-heading text-3xl font-extrabold text-primary">?{trek.price.toLocaleString()}</span>
+                    <span className="font-heading text-3xl font-extrabold text-primary">₹{trek.price.toLocaleString()}</span>
                     {trek.originalPrice && (
-                      <span className="text-muted-foreground line-through text-sm">?{trek.originalPrice.toLocaleString()}</span>
+                      <span className="text-sm text-muted-foreground line-through">₹{trek.originalPrice.toLocaleString()}</span>
                     )}
                   </div>
                   <p className="text-xs text-muted-foreground font-body">per person (incl. GST)</p>
@@ -260,8 +260,8 @@ const TrekDetailPage = () => {
 
                 {trek.originalPrice && (
                   <div className="bg-highlight/10 rounded-lg p-3 text-center">
-                    <p className="text-sm font-heading font-bold text-highlight">
-                      Save ?{(trek.originalPrice - trek.price).toLocaleString()}!
+                    <p className="font-heading text-sm font-bold text-highlight">
+                      Save ₹{(trek.originalPrice - trek.price).toLocaleString()}!
                     </p>
                     <p className="text-xs text-muted-foreground">Early bird offer</p>
                   </div>
@@ -291,7 +291,7 @@ const TrekDetailPage = () => {
                 </Button>
 
                 <a
-                  href={`https://wa.me/919876543210?text=Hi! I'm interested in ${trek.title}`}
+                  href={`https://wa.me/919850504437?text=${encodeURIComponent(`Hi! I'm interested in ${trek.title}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-center text-sm text-primary font-semibold hover:underline"

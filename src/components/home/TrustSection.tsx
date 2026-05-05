@@ -1,5 +1,24 @@
 import { motion } from "framer-motion";
+import { Award, Facebook, Instagram, Star, Youtube } from "lucide-react";
 import { trustStats } from "@/data/siteData";
+
+const socialLinks = [
+  { label: "Live Instagram", href: "https://www.instagram.com/explorers_group/", icon: Instagram },
+  { label: "Facebook Page Live", href: "https://www.facebook.com/Explorers.DareToDiscover/", icon: Facebook },
+  { label: "YouTube", href: "https://www.youtube.com/channel/UC5ffVZUnp2p2Bi6VqNyMRcw", icon: Youtube },
+  {
+    label: "Live Google Reviews",
+    href: "https://www.google.com/search?q=Explorers+Treks+and+Tours+Pune+reviews",
+    icon: Star,
+  },
+];
+
+const affiliations = [
+  "24+ years of adventure operations",
+  "Certified trek leaders and first-aid support",
+  "School, corporate and family tour specialists",
+  "Safety-first event planning",
+];
 
 const TrustSection = () => {
   return (
@@ -36,6 +55,55 @@ const TrustSection = () => {
               <p className="text-primary-foreground/70 font-body text-sm">{stat.label}</p>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1.15fr]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-lg bg-primary-foreground/10 p-6 backdrop-blur-sm"
+          >
+            <div className="mb-5 flex items-center gap-3">
+              <Award className="h-6 w-6 text-highlight" />
+              <h3 className="font-heading text-2xl font-extrabold text-primary-foreground">Awards & Affiliations</h3>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {affiliations.map((item) => (
+                <div key={item} className="rounded-lg border border-primary-foreground/15 bg-primary-foreground/10 p-4 text-sm font-semibold text-primary-foreground/80">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-lg bg-primary-foreground p-6 text-foreground"
+          >
+            <p className="text-xs font-bold uppercase tracking-widest text-accent">Social Media Live Links</p>
+            <h3 className="mt-2 font-heading text-2xl font-extrabold">Reviews, Updates and Testimonials</h3>
+            <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+
+                return (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 rounded-lg border border-border bg-background p-4 transition-colors hover:border-primary/50 hover:text-primary"
+                  >
+                    <Icon className="h-5 w-5" />
+                    <span className="font-heading text-sm font-bold">{social.label}</span>
+                  </a>
+                );
+              })}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

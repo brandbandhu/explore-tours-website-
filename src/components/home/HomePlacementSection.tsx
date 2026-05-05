@@ -2,34 +2,14 @@ import { Link } from "react-router-dom";
 import { CalendarDays, Filter, MapPin, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { treks } from "@/data/siteData";
+import { programDirectory, tourCategoryFilters, treks } from "@/data/siteData";
 
 const tags = ["Offbeat", "Trending", "Popular", "Weekend", "Monsoon", "Family"];
-
-const ageFilters = [
-  "Junior Explorers (8 to 14 Years)",
-  "Lady Explorers",
-  "Silver Explorers (40+ Years)",
-  "Himalayan Explorers",
-  "School Tours",
-  "Corporate Tours",
-];
 
 const trekSeasons = [
   "Monsoon Treks (June to September)",
   "Winter Treks (October to January)",
   "Summer Treks (February to May)",
-];
-
-const tourCategories = [
-  "One Day Trek",
-  "Camping",
-  "Summer Camp",
-  "Winter Camp",
-  "Wildlife Safari",
-  "Domestic Tour",
-  "International Tour",
-  "One Day Adventure",
 ];
 
 const HomePlacementSection = () => {
@@ -65,10 +45,10 @@ const HomePlacementSection = () => {
                     Event name and age wise
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {ageFilters.map((filter) => (
-                      <Link key={filter} to="/treks">
+                    {programDirectory.slice(0, 10).map((filter) => (
+                      <Link key={filter.title} to={filter.link}>
                         <Badge variant="secondary" className="rounded-full px-3 py-1.5 text-xs">
-                          {filter}
+                          {filter.title}
                         </Badge>
                       </Link>
                     ))}
@@ -96,12 +76,12 @@ const HomePlacementSection = () => {
           </div>
 
           <div className="space-y-6">
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {tags.map((tag) => (
                 <Link
                   key={tag}
                   to="/treks"
-                  className="rounded-2xl border border-border bg-card px-3 py-5 text-center font-heading text-sm font-bold text-foreground card-shadow transition-all hover:-translate-y-1 hover:border-primary/50 hover:text-primary"
+                  className="rounded-lg border border-border bg-card px-3 py-4 text-center font-heading text-sm font-bold text-foreground card-shadow transition-all hover:-translate-y-1 hover:border-primary/50 hover:text-primary sm:py-5"
                 >
                   {tag}
                 </Link>
@@ -128,7 +108,7 @@ const HomePlacementSection = () => {
                   <Link
                     key={event.id}
                     to={`/treks/${event.id}`}
-                    className="grid gap-4 rounded-2xl border border-border bg-background p-3 transition-colors hover:border-primary/50 sm:grid-cols-[128px_1fr]"
+                    className="grid gap-4 rounded-lg border border-border bg-background p-3 transition-colors hover:border-primary/50 sm:grid-cols-[128px_minmax(0,1fr)]"
                   >
                     <img
                       src={event.image}
@@ -142,7 +122,7 @@ const HomePlacementSection = () => {
                         <span className="text-xs font-semibold text-muted-foreground">{event.ageGroup} Years</span>
                       </div>
                       <h4 className="mt-2 font-heading text-lg font-bold text-foreground">{event.title}</h4>
-                      <div className="mt-2 flex flex-wrap gap-4 text-sm text-muted-foreground">
+                      <div className="mt-2 flex flex-wrap gap-3 text-sm text-muted-foreground">
                         <span className="flex items-center gap-1">
                           <MapPin className="h-4 w-4" />
                           {event.location}
@@ -167,8 +147,8 @@ const HomePlacementSection = () => {
                 Camp Category / Tour Category
               </p>
               <div className="flex flex-wrap gap-2">
-                {tourCategories.map((category) => (
-                  <Link key={category} to="/programs">
+                {tourCategoryFilters.map((category) => (
+                  <Link key={category} to="/treks">
                     <Badge variant="outline" className="rounded-full px-3 py-1.5">
                       {category}
                     </Badge>

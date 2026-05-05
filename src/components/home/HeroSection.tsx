@@ -75,7 +75,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="mb-4 max-w-4xl font-heading text-4xl font-extrabold leading-tight text-primary-foreground md:text-6xl lg:text-7xl"
+              className="mb-4 max-w-4xl font-heading text-3xl font-extrabold leading-tight text-primary-foreground sm:text-4xl md:text-6xl lg:text-7xl"
             >
               {heroSlides[current].title}
             </motion.h1>
@@ -93,21 +93,21 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4"
             >
-              <Link to="/treks">
+              <Link to="/treks" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="gradient-highlight rounded-full px-8 font-heading text-base font-bold text-highlight-foreground"
+                  className="gradient-highlight w-full rounded-full px-8 font-heading text-base font-bold text-highlight-foreground sm:w-auto"
                 >
                   Explore Treks
                 </Button>
               </Link>
-              <Link to="/atlas">
+              <Link to="/atlas" className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full border-primary-foreground/40 px-8 font-heading text-base font-bold text-primary-foreground hover:bg-primary-foreground/10"
+                  className="w-full rounded-full border-primary-foreground/40 px-8 font-heading text-base font-bold text-primary-foreground hover:bg-primary-foreground/10 sm:w-auto"
                 >
                   Join ATLAS
                 </Button>
@@ -119,14 +119,14 @@ const HeroSection = () => {
 
       <button
         onClick={prev}
-        className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-card/30 p-2 text-primary-foreground backdrop-blur-sm transition hover:bg-card/50"
+        className="absolute left-2 top-1/2 z-20 -translate-y-1/2 rounded-full bg-card/30 p-2 text-primary-foreground backdrop-blur-sm transition hover:bg-card/50 sm:left-4"
         aria-label="Previous slide"
       >
         <ChevronLeft className="h-6 w-6" />
       </button>
       <button
         onClick={next}
-        className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-card/30 p-2 text-primary-foreground backdrop-blur-sm transition hover:bg-card/50"
+        className="absolute right-2 top-1/2 z-20 -translate-y-1/2 rounded-full bg-card/30 p-2 text-primary-foreground backdrop-blur-sm transition hover:bg-card/50 sm:right-4"
         aria-label="Next slide"
       >
         <ChevronRight className="h-6 w-6" />

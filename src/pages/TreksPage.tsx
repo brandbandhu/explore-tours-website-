@@ -178,9 +178,9 @@ const TreksPage = () => {
 
   return (
     <Layout>
-      <div className="pt-28 pb-10 px-4">
+      <div className="px-4 pb-10 pt-24 md:pt-28">
         <div className="container mx-auto">
-          <div className="bg-card rounded-3xl border border-border card-shadow p-6 md:p-10">
+          <div className="rounded-lg border border-border bg-card p-5 card-shadow md:p-10">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
               <div>
                 <span className="text-xs font-heading font-semibold text-muted-foreground uppercase tracking-widest">All Treks</span>
@@ -239,7 +239,7 @@ const TreksPage = () => {
 
           <button
             onClick={() => setShowFilters(true)}
-            className="lg:hidden fixed bottom-20 right-6 z-40 gradient-primary text-primary-foreground rounded-full px-5 py-3 shadow-lg font-heading font-semibold text-sm flex items-center gap-2"
+            className="fixed bottom-20 right-4 z-40 flex items-center gap-2 rounded-full px-4 py-3 font-heading text-sm font-semibold text-primary-foreground shadow-lg gradient-primary lg:hidden sm:right-6 sm:px-5"
           >
             <Filter className="w-4 h-4" /> Filters
           </button>
@@ -250,7 +250,7 @@ const TreksPage = () => {
               <motion.div
                 initial={{ x: "100%" }}
                 animate={{ x: 0 }}
-                className="absolute right-0 top-0 bottom-0 w-80 bg-card p-6 shadow-xl overflow-y-auto"
+                className="absolute bottom-0 right-0 top-0 w-[min(92vw,20rem)] overflow-y-auto bg-card p-5 shadow-xl sm:p-6"
               >
                 <div className="flex justify-between items-center mb-6">
                   <h3 className="font-heading font-bold text-foreground">Filter Treks</h3>
@@ -302,11 +302,11 @@ const TreksPage = () => {
                       <h3 className="font-heading font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                         {trek.title}
                       </h3>
-                      <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                        <span className="flex items-center gap-1"><MapPin className="w-3 h-3" /> {trek.location}</span>
-                        <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {trek.duration}</span>
+                      <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+                        <span className="flex min-w-0 items-center gap-1"><MapPin className="h-3 w-3 shrink-0" /> {trek.location}</span>
+                        <span className="flex items-center gap-1"><Clock className="h-3 w-3 shrink-0" /> {trek.duration}</span>
                       </div>
-                      <div className="flex items-center justify-between">
+                      <div className="flex flex-col gap-3 min-[420px]:flex-row min-[420px]:items-center min-[420px]:justify-between">
                         <div>
                           <span className="font-heading font-extrabold text-lg text-primary">?{trek.price.toLocaleString()}</span>
                           {trek.originalPrice && (

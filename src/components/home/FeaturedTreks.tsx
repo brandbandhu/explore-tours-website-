@@ -65,15 +65,15 @@ const FeaturedTreks = () => {
                   <h3 className="font-heading font-bold text-lg text-foreground mb-2 group-hover:text-primary transition-colors">
                     {trek.title}
                   </h3>
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
-                    <span className="flex items-center gap-1">
+                  <div className="mb-3 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+                    <span className="flex min-w-0 items-center gap-1">
                       <MapPin className="w-3.5 h-3.5" /> {trek.location}
                     </span>
                     <span className="flex items-center gap-1">
                       <Clock className="w-3.5 h-3.5" /> {trek.duration}
                     </span>
                   </div>
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col gap-3 min-[420px]:flex-row min-[420px]:items-center min-[420px]:justify-between">
                     <div>
                       <span className="font-heading font-extrabold text-xl text-primary">₹{trek.price.toLocaleString()}</span>
                       {trek.originalPrice && (

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { programDirectory } from "@/data/siteData";
 import {
   Sheet,
   SheetContent,
@@ -12,7 +13,7 @@ import {
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  { label: "About Us", href: "/about" },
   {
     label: "Treks",
     href: "/treks",
@@ -20,22 +21,26 @@ const navLinks = [
       { label: "All Treks", href: "/treks" },
       { label: "Weekend Treks", href: "/treks?type=Weekend+Trek" },
       { label: "Himalayan Treks", href: "/treks?type=Himalayan+Trek" },
+      { label: "Customised Treks", href: "/programs/customised-packages" },
     ],
   },
   { label: "Camping", href: "/treks?type=Camping" },
   {
-    label: "Programs",
-    href: "/programs",
-    children: [
-      { label: "Junior Explorers", href: "/programs/junior-explorers" },
-      { label: "Lady Explorers", href: "/programs/lady-explorers" },
-      { label: "Silver Trails", href: "/programs/silver-trails" },
-      { label: "On Wheels", href: "/programs/on-wheels" },
-      { label: "Mountain Run", href: "/programs/mountain-run" },
-    ],
+    label: "Speciality Tours",
+    href: "/programs/lady-explorers",
+    children: programDirectory
+      .filter((item) => ["Lady Explorers", "Silver Explorers", "Wildlife Tours"].includes(item.title))
+      .map((item) => ({ label: item.title, href: item.link })),
   },
+  { label: "Customised Tour Packages", href: "/programs/customised-packages" },
+  { label: "Group Tours", href: "/programs/group-tours" },
+  { label: "Offbeat Tours", href: "/programs/offbeat-tours" },
   { label: "ATLAS Academy", href: "/atlas" },
-  { label: "Contact", href: "/contact" },
+  { label: "Mountain Run", href: "/programs/mountain-run" },
+  { label: "School Tours", href: "/programs/school-tours" },
+  { label: "Corporate Tours", href: "/programs/corporate-tours" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 const Navbar = () => {
@@ -56,9 +61,9 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
+      <div className="container mx-auto flex h-16 items-center justify-between gap-3 px-4 md:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-xl md:text-2xl font-heading font-extrabold tracking-tight">
+          <span className="font-heading text-lg font-extrabold tracking-tight sm:text-xl md:text-2xl">
             <span className={scrolled ? "text-primary" : "text-foreground drop-shadow-sm"}>EXPLORERS</span>
           </span>
           <span className={`hidden sm:block text-xs font-body ${scrolled ? "text-muted-foreground" : "text-foreground/70 drop-shadow-sm"}`}>
@@ -97,7 +102,7 @@ const Navbar = () => {
               <Menu className="w-6 h-6" />
             </button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-80 sm:w-96 p-0">
+          <SheetContent side="right" className="w-[min(92vw,24rem)] p-0">
             <div className="h-full flex flex-col">
               <SheetHeader className="px-6 pt-6 pb-4 border-b border-border">
                 <SheetTitle className="text-left font-heading text-xl font-extrabold text-foreground">

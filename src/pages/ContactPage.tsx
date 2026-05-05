@@ -33,7 +33,7 @@ const ContactPage = () => {
         <div className="container mx-auto px-4 pb-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:col-span-7">
-              <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 card-shadow border border-border space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5 rounded-lg border border-border bg-card p-5 card-shadow sm:p-8">
                 <h3 className="font-heading text-xl font-bold text-foreground mb-2">Send us a Message</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Input
@@ -74,7 +74,7 @@ const ContactPage = () => {
                   rows={6}
                   className="bg-background"
                 />
-                <Button type="submit" className="w-full gradient-highlight text-highlight-foreground font-heading font-bold rounded-xl py-6 text-base">
+                <Button type="submit" className="w-full rounded-lg py-6 font-heading text-base font-bold text-highlight-foreground gradient-highlight">
                   <Send className="w-4 h-4 mr-2" /> Submit
                 </Button>
               </form>
@@ -90,7 +90,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-foreground">For General Query</p>
-                      <p className="text-sm text-muted-foreground">+91 98765 43210</p>
+                      <p className="text-sm text-muted-foreground">+91 9850504437</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -99,7 +99,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-foreground">For Trek Query</p>
-                      <p className="text-sm text-muted-foreground">info@explorerstreks.com</p>
+                      <p className="text-sm text-muted-foreground">info@explorersgroup.in</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -134,12 +134,12 @@ const ContactPage = () => {
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Office No. 12, FC Road, Shivajinagar, Pune 411005, Maharashtra
+                    1692, Bhagyadarshan Building, Shop No 5, Sadashiv Peth, Tilak Road, Pune 411030
                   </p>
                 </div>
                 <div className="rounded-xl overflow-hidden border border-border h-40">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.204!2d73.841!3d18.52!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDMxJzEyLjAiTiA3M8KwNTAnMjcuNiJF!5e0!3m2!1sen!2sin!4v1600000000000"
+                    src="https://maps.google.com/maps?q=1692%20Bhagyadarshan%20Building%20Shop%20No%205%20Sadashiv%20Peth%20Tilak%20Road%20Pune%20411030&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

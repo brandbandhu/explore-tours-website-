@@ -54,9 +54,9 @@ const AtlasSection = () => {
               src={heroKids}
               alt="ATLAS Academy training"
               loading="lazy"
-              className="rounded-2xl card-shadow w-full h-[400px] object-cover"
+              className="h-72 w-full rounded-lg object-cover card-shadow sm:h-[400px]"
             />
-            <div className="absolute -bottom-4 -left-4 bg-highlight text-highlight-foreground rounded-xl p-4 card-shadow font-heading">
+            <div className="absolute bottom-3 left-3 rounded-lg bg-highlight p-4 font-heading text-highlight-foreground card-shadow sm:-bottom-4 sm:-left-4">
               <div className="text-2xl font-extrabold">500+</div>
               <div className="text-xs font-medium">Certified Leaders</div>
             </div>

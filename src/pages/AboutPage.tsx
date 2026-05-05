@@ -22,7 +22,7 @@ const AboutPage = () => {
                 <span className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white/90">
                   About Explorers
                 </span>
-                <h1 className="mt-4 font-heading text-4xl md:text-6xl font-extrabold text-white">
+                <h1 className="mt-4 font-heading text-3xl font-extrabold text-white sm:text-4xl md:text-6xl">
                   Crafting Adventures That Last a Lifetime
                 </h1>
                 <p className="mt-4 text-base md:text-lg text-white/80 font-body">
@@ -56,11 +56,11 @@ const AboutPage = () => {
                 </p>
               </motion.div>
             </div>
-            <div className="lg:col-span-5 grid grid-cols-2 gap-4">
-              <img src={heroWomen} alt="Our team" className="h-56 w-full rounded-2xl object-cover card-shadow" />
-              <img src={heroCamping} alt="Camp experience" className="h-56 w-full rounded-2xl object-cover card-shadow" />
-              <img src={heroKids} alt="Junior explorers" className="h-56 w-full rounded-2xl object-cover card-shadow" />
-              <div className="h-56 w-full rounded-2xl border border-border bg-card p-4 flex flex-col justify-between">
+            <div className="grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 lg:col-span-5">
+              <img src={heroWomen} alt="Our team" className="h-48 w-full rounded-lg object-cover card-shadow sm:h-56" />
+              <img src={heroCamping} alt="Camp experience" className="h-48 w-full rounded-lg object-cover card-shadow sm:h-56" />
+              <img src={heroKids} alt="Junior explorers" className="h-48 w-full rounded-lg object-cover card-shadow sm:h-56" />
+              <div className="flex h-48 w-full flex-col justify-between rounded-lg border border-border bg-card p-4 sm:h-56">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Why Us</p>
                   <h3 className="mt-2 font-heading text-xl font-bold text-foreground">Guided by Experts</h3>
@@ -75,7 +75,7 @@ const AboutPage = () => {
 
         <section className="section-padding bg-card">
           <div className="container mx-auto">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 gap-6 min-[420px]:grid-cols-2 lg:grid-cols-4">
               {trustStats.map((stat, i) => (
                 <motion.div
                   key={stat.label}
@@ -135,7 +135,7 @@ const AboutPage = () => {
         <section className="section-padding bg-secondary/40">
           <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-6">
-              <img src={heroCamping} alt="Group trek" className="rounded-3xl card-shadow w-full h-[360px] object-cover" />
+              <img src={heroCamping} alt="Group trek" className="h-72 w-full rounded-lg object-cover card-shadow sm:h-[360px]" />
             </div>
             <div className="lg:col-span-6">
               <span className="inline-flex items-center rounded-full border border-border bg-card px-4 py-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">

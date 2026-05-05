@@ -58,6 +58,35 @@ export const categories = [
   { name: "Mountain Run", icon: "🏃", link: "/programs/mountain-run" },
 ];
 
+export const tourCategoryFilters = [
+  "One Day Trek",
+  "Camping",
+  "Summer Camp",
+  "Winter Camp",
+  "Wildlife Safari",
+  "Domestic Tour",
+  "International Tour",
+  "One Day Trekking Plan",
+];
+
+export const programDirectory = [
+  { title: "Junior Explorers", subtitle: "8 to 14 Years", link: "/programs/junior-explorers" },
+  { title: "Lady Explorers", subtitle: "Women special adventures", link: "/programs/lady-explorers" },
+  { title: "Silver Explorers", subtitle: "40+ Years", link: "/programs/silver-explorers" },
+  { title: "Camping", subtitle: "Outdoor stays and camp experiences", link: "/programs/camping" },
+  { title: "Explorers on Wheels", subtitle: "Bike Safari / Cycle Safari / Caravan Tours", link: "/programs/on-wheels" },
+  { title: "Himalayan Explorers", subtitle: "High-altitude treks and expeditions", link: "/programs/himalayan-explorers" },
+  { title: "Wildlife Tours", subtitle: "Jungle safari and nature tours", link: "/programs/wildlife-tours" },
+  { title: "School Tours", subtitle: "Educational outdoor learning", link: "/programs/school-tours" },
+  { title: "Corporate Tours", subtitle: "Team building and offsites", link: "/programs/corporate-tours" },
+  { title: "Explorers Mountain Run", subtitle: "EMR running events", link: "/programs/mountain-run" },
+  { title: "Customised Packages", subtitle: "Domestic and international plans", link: "/programs/customised-packages" },
+  { title: "Group Tours / Fix Departures", subtitle: "Mixed domestic and international departures", link: "/programs/group-tours" },
+  { title: "ATLAS Training Academy", subtitle: "Adventure leadership training", link: "/atlas" },
+  { title: "Offbeat Tours", subtitle: "Unusual destinations and rare routes", link: "/programs/offbeat-tours" },
+  { title: "Work With Explorers", subtitle: "Work with us / Career opportunities", link: "/contact" },
+];
+
 export const treks: Trek[] = [
   {
     id: "rajgad-fort",
@@ -256,8 +285,8 @@ export const treks: Trek[] = [
 
 export const trustStats = [
   { number: "24+", label: "Years Experience", icon: "🏆" },
-  { number: "2L+", label: "Happy Members", icon: "👥" },
-  { number: "500+", label: "Treks Completed", icon: "⛰️" },
+  { number: "Lakhs", label: "Trusted Explorers", icon: "👥" },
+  { number: "1000+", label: "Treks Completed", icon: "⛰️" },
   { number: "100%", label: "Safety Record", icon: "🛡️" },
 ];
 
@@ -296,6 +325,69 @@ export const specialPrograms = [
     description: "Trail running events in the Sahyadri mountains for fitness enthusiasts.",
     image: heroMountains,
     ageGroup: "16-45 years",
+  },
+  {
+    id: "silver-explorers",
+    title: "Silver Explorers",
+    description: "Comfortable nature trails, cultural tours, and carefully paced outdoor experiences for 40+ explorers.",
+    image: heroMountains,
+    ageGroup: "40+ years",
+  },
+  {
+    id: "camping",
+    title: "Camping",
+    description: "Family-friendly camping, lakeside stays, night sky experiences, bonfire evenings, and outdoor learning camps.",
+    image: heroCamping,
+    ageGroup: "All ages",
+  },
+  {
+    id: "himalayan-explorers",
+    title: "Himalayan Explorers",
+    description: "Guided Himalayan treks, snow treks, high-altitude expeditions, and training-backed mountain programs.",
+    image: heroWomen,
+    ageGroup: "14+ years",
+  },
+  {
+    id: "wildlife-tours",
+    title: "Wildlife Tours",
+    description: "Jungle safaris, birding trips, nature photography tours, and wildlife learning programs.",
+    image: heroCamping,
+    ageGroup: "All ages",
+  },
+  {
+    id: "school-tours",
+    title: "School Tours",
+    description: "Safe educational tours, leadership activities, nature trails, camps, and curriculum-friendly outdoor modules.",
+    image: heroKids,
+    ageGroup: "School groups",
+  },
+  {
+    id: "corporate-tours",
+    title: "Corporate Tours",
+    description: "Team building tours, leadership programs, outbound training, retreats, and customised corporate offsites.",
+    image: heroCamping,
+    ageGroup: "Corporate teams",
+  },
+  {
+    id: "customised-packages",
+    title: "Customised Packages",
+    description: "Domestic weekend, Kokan, South India, North India, pilgrimage, Nepal, Bhutan, Bali, and Maldives plans.",
+    image: heroMountains,
+    ageGroup: "Private groups",
+  },
+  {
+    id: "group-tours",
+    title: "Group Tours / Fix Departures",
+    description: "Scheduled group departures across domestic and international destinations.",
+    image: heroWomen,
+    ageGroup: "All ages",
+  },
+  {
+    id: "offbeat-tours",
+    title: "Offbeat Tours",
+    description: "Lesser-known routes, hidden destinations, and special interest travel experiences.",
+    image: heroMountains,
+    ageGroup: "All ages",
   },
 ];
 
